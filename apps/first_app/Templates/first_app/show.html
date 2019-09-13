@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .header{
+        border-bottom: 5px solid black;    
+    }
+    .header h1{
+        display:inline-block;
+        margin-right:400px;
+
+    }
+    .header a{
+        display:inline-block;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Success!!!! Welcome, {{ user.first_name}}  {{user.last_name  }}</h1>
+        <a href="/"><button>Logout</button></a>
+    </div>
+
+    
+        <p>Title: {{ show.title }}</p>
+        <p>Added by: {{ show.uploaded_by.first_name  }}</p>
+   
+        <p>Added on: {{show.created_at   }}</p>
+   
+        <p>Last Updated: {{ show.updated_at  }}</p>
+    
+        <p>Description:{{ show.description  }}</p>
+    <br> 
+<h3>Users who like this book:</h3>
+    {% for x in who_likes %}
+    <p>  -{{  x.first_name  }} {{  x.last_name  }}</p>
+    {% endfor %}
+
+</body>
+</html>
